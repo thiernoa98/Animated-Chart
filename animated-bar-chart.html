@@ -9,18 +9,12 @@
 </head>
 <body>
     <div id="container" >
-        <h1>JS Animated Bar</h1>
-        <h2>Acme Inc. EEmployees</h2>
+        <h1>Animated Bar Chart </h1>
+        <h2>Acme Inc. Employees</h2>
         <div id="chart"></div>
     </div>
-    <!-- <div></div> -->
-
-    <!-- <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
-    </script> -->
 
     <script>
-        // import Chart from 
         const emps = [
             {name: 'Amy', pay: 45600, yrs: 5},
             {name: 'Bob', pay: 67600, yrs: 8},
@@ -30,16 +24,7 @@
             {name: 'Fay', pay: 65600, yrs: 4}
         ]
 
-        // const xyValues = [
-        //     {x:1, y:0},
-        //     {x:150, y:100000}
-        // ];
-        // 1. Using the emps array of objects, make a column chart w:
-       //    - vertical bars (columns) show how much pay each employee gets
-       //    - y-axis has dollar values from 0-100,000
-       //    - x-axis has names under each column
-       //    HINT: divs would work nicely as the required rectangles
-       //dom eeleemeent
+
        const divvy = document.getElementById('chart');
 
        const innerDiv = document.createElement('div');
@@ -53,24 +38,17 @@
        let barInterval;
     
 
-        // const text = 'hi';
-        //     const divTex = document.createTextNode(text);
-        //     div.appendChild(divTex);
-        //     document.body.appendChild(div)
-
         const yAxis = document.createElement('div');
         yAxis.className = 'y-axis';
         innerDiv.appendChild(yAxis);
 
         for (let i = 0; i < emps.length; i++) {
-            // const element = array[i];
             
             let smallBar = document.createElement('div');
             smallBar.className = 'bar';
             let barFullHt = Math.round(emps[i].pay / 220);
             let htFactor = 10;
 
-            //adding the small bar into the innerDiv
             innerDiv.appendChild(smallBar);
 
             barInterval = setInterval(()=>{
@@ -89,60 +67,11 @@
             names.appendChild(name);
         }
 
-        //getting the numbers on the side
-        //this loop will start from 100,000 and decrease by 10,000 to zero
         for (let i = 100000; i>=0; i-=10000) {
 
            yAxis.innerHTML += `<p class='pay'> ${(i).toLocaleString()} </>`;
             
         }
-
-    // div.appendChild();
-        // for (let i = 0; i < 4; i++) {
-        //     // const element = array[i];
-        //     div[i];
-        // }
-        
-        // for (let i = 0; i < emps.length; i++) {
-        //    let emp = emps[i];
-        //    let e1 = emp.name;
-            
-           
-            
-        // }
-
-        // emps.map((emp)=>{
-        //     for (let i = 0; i < emp.name.length; i++) {
-        //         // const element = array[i];
-        //         // let e2 = emp.name[i]
-        //         // console.log(e2);
-        //         divvy.appendChild(divvy);
-                
-        //     }
-        // })
-    //    emps.map((emp)=>{
-
-    //     const xyValues = [{}]
-    //         const myChart = new Chart('chartDiv', {
-    //         type: 'line',
-    //         data: {datasets: [{
-    //             pointRadius: 4,
-    //             pointBackgroundColor: "rgba(0,0,255,1)",
-    //             data: xyValues
-    //         }]},
-    //         options: {}
-    //     })
-    //     // console.log(emp.pay);
-    //    })
-
-
-
-        
-        // console.log(r++);
-        // console.log(emps);
-       // 2. Kicking it up a notch, make the bars animate -- grow in height
-       //    on page load, so that it takes them X seconds to reach full ht
-       //    HINT: setInterval()
         
 
     </script>
